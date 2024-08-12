@@ -18,18 +18,18 @@ export const FormSection: FC = function () {
       }}
     >
       <div className="w-[80%] mx-auto py-5">
-        <div className="py-2 mb-2">
+        <div className="py-2 mb-3">
           <h2 className="text-xl leading-6">Preview</h2>
           <p className="text-base leading-5">
             You will be able to customize the fields in the later stage
           </p>
         </div>
 
-        <header className="py-5 px-8 bg-[#1A8FE626] rounded-t-lg border-x-0 border-y-0 border-b border-solid border-[#1a8ee63e]">
+        <header className="py-8 px-8 bg-[#1A8FE626] rounded-t-lg border-x-0 border-y-0 border-b border-solid border-[#1a8ee63e]">
           <div>
             <h2 className="text-xl leading-6">Name of the Enquiry Form</h2>
             <p className="text-xs text-[#888] leading-[14.6px]">One line description of the form</p>
-            <p className="text-xs text-[#888] leading-[14.6px] pt-5">
+            <p className="text-xs text-[#888] leading-[14.6px] pt-7">
               Provide the following information to process your application
             </p>
           </div>

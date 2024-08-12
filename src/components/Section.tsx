@@ -26,7 +26,7 @@ export const Section: FC = function () {
         style={{ borderBlockStart: 'solid 2px #d8d8d8' }}
       >
         <Button variant="solid" className="px-10 py-2 bg-[#1a8fe6]" onClick={handleNextBtn}>
-          {currentLinkIndex < navItems.length - 1 ? 'Next' : 'Finish'}
+          Next
         </Button>
       </div>
     </section>

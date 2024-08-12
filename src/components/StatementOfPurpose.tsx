@@ -96,7 +96,7 @@ export const StatementOfPurpose: FC = function () {
             key={index}
             value={statement[formName].value}
             onChange={handleInput}
-            statementLabel={statementLabel}
+            statementLabel={`${index+1}. ${statementLabel}`}
             name={formName}
             wordLimit={statement[formName].limit}
           />
