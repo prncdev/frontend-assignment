@@ -33,7 +33,7 @@ li.MuiStep-root::after {
 }
 
 section.main-section {
-  height: calc(100vh -68px);
+  height: calc(100vh -75px);
 }
 
 div.rs-picker-input-group {

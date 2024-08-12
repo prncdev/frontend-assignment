@@ -1,4 +1,4 @@
-# Tech stack use are:
+# Used tech stack are:
   React with TypeScript,
   Material MUI,
   TailwindCSS,

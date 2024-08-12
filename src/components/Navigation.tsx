@@ -1,8 +1,8 @@
-import { FC, useEffect, useState } from "react";
+import { createRef, FC, RefObject, useEffect, useRef, useState } from "react";
 import { NavCard } from "./NavCard";
 import { Link, useLocation } from 'react-router-dom';
 
-const navItems = [
+export const navItems = [
   {
     title: 'Details Collection',
     desc: 'Collect information from Candidates on their education, work experience, contact no, etc',
@@ -26,16 +26,24 @@ const navItems = [
 ]
 
 
-export const Nav: FC = function () {
+export const Nav: FC<{currentSection: number}> = function ({ currentSection }) {
   const location = useLocation();
   const [isSelected, setIsSelected] = useState('/');
+  
+  const navRefs = useRef<RefObject<HTMLAnchorElement>[]>(navItems.map(() => createRef()));
+
+  useEffect(() => {
+    if (navRefs.current[currentSection]) {
+      navRefs.current[currentSection].current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }, [currentSection]);
 
   useEffect(() => {
     setIsSelected(location.pathname);
   }, [location.pathname]);
 
   return (
-    <nav className="bg-white px-10 py-6 h-[75.5vh] overflow-y-auto">
+    <nav className="bg-white px-10 py-6 h-[74vh] overflow-y-auto">
       <NavCard />
       <p className="text-[#595959] pt-7">
         Explore the following Templates:
@@ -43,9 +51,8 @@ export const Nav: FC = function () {
 
       <div className="py-4 inline-flex flex-col gap-7">
         {navItems.map(({ title, desc, link }, index: number) => (
-          <Link to={link}>
+          <Link to={link} key={title + index} ref={navRefs.current[index]}>
             <NavCard
-              key={title + index}
               title={title}
               desc={desc}
               boxColor={isSelected === link ?  "#1a8fe64d" : ''}

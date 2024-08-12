@@ -11,7 +11,7 @@ export const FormSection: FC = function () {
   return (
     <form
       style={{
-        height: 'calc(100vh - 122.5px)',
+        height: 'calc(100vh - 134.5px)',
         width: '70%',
         backgroundColor: '#f5f5f5',
         overflowY: 'auto',
